@@ -38,9 +38,6 @@ import com.squareup.picasso.Picasso;
 
 
 
-
-
-
 public class StorageMainActivity extends AppCompatActivity {
 
 
@@ -93,7 +90,7 @@ public class StorageMainActivity extends AppCompatActivity {
         mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              
+              openImagesActivity();
             }
         });
     }
@@ -156,7 +153,11 @@ public class StorageMainActivity extends AppCompatActivity {
         }
     }
 
-
+private void openImagesActivity()
+{
+    Intent intent = new Intent(this,ImagesActivity.class);
+    startActivity(intent);
+}
 
 }
 

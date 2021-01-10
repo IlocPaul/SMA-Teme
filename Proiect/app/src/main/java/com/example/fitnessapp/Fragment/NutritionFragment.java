@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.fitnessapp.FragmentRecycler.ModalClass;
 import com.example.fitnessapp.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessapp.Fragment.FragmentMainActivity;
+import com.example.fitnessapp.FragmentRecycler.FragmentRecyclerMainActivity;
+import com.example.fitnessapp.MainMenu.MenuMainActivity;
+import com.example.fitnessapp.Storage.StorageMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -103,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(task.isSuccessful())
                 {
                     //redirect to user profile
-                    startActivity(new Intent(MainActivity.this, HomePage.class));
+                    startActivity(new Intent(MainActivity.this, MenuMainActivity.class));
                 }
                 else
                 {

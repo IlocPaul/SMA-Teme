@@ -23,8 +23,8 @@ public class RecyclerViewMainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
 
         //store strings of exercises & description
-        s1 = getResources().getStringArray(R.array.List_of_Exercises);
-        s2 = getResources().getStringArray(R.array.description);
+       // s1 = getResources().getStringArray(R.array.List_of_Exercises);
+       // s2 = getResources().getStringArray(R.array.description);
 
 
         Adapter adapter = new Adapter(this,s1,s2,images);
