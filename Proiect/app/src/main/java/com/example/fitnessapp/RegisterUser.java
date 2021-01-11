@@ -53,6 +53,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     }
 
 
+
     //clicking on buttons of the register screen
     public void onClick(View v)
     {

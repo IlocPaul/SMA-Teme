@@ -13,6 +13,7 @@ import com.example.fitnessapp.R;
 
 import java.util.List;
 
+//used to insert items in recycler view
 public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
 
 
@@ -28,6 +29,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+        //returns a view from the selected layout
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.layout_file,parent, false);
 
@@ -35,9 +37,9 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
+    //holds item from recycler
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         holder.imageView.setImageResource(mList.get(position).getImage());
         holder.textView.setText(mList.get(position).getText());
     }
@@ -52,6 +54,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
         ImageView imageView;
         TextView textView;
 
+        //returns items from recycler
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

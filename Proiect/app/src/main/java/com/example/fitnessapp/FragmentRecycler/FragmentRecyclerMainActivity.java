@@ -35,8 +35,6 @@ public class FragmentRecyclerMainActivity extends AppCompatActivity {
 
         btnavViewid.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-
-
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -62,8 +60,11 @@ public class FragmentRecyclerMainActivity extends AppCompatActivity {
 
     }
 
+    //replaces fragment with a new instance selected from the navigation tab
     private void setFragment(Fragment fragment) {
+        //gives us method to manipulate fragments
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        //replace fragments
         fragmentTransaction.replace(R.id.frameLayoutId, fragment);
         fragmentTransaction.commit();
     }

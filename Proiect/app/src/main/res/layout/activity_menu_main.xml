@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".MainMenu.MenuMainActivity">
 
+    <TextView
+        android:id="@+id/greeting"
+        android:text="Hello "
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/nameUser"
+        android:text="Name "
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_height="wrap_content"/>
+
+
     <ImageView
         android:id="@+id/btnTraining"
         android:layout_centerInParent="true"

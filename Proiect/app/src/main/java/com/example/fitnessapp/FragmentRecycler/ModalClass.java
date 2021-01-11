@@ -5,6 +5,8 @@ public class ModalClass {
     int image;
     String text;
 
+    //class stores information about items that will be stored in recycler view
+    //in this case 1 image of the exercise and it's description / name
     public ModalClass(int image, String text)
     {
         this.image=image;
