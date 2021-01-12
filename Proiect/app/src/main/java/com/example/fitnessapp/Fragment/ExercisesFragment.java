@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fitnessapp.FragmentRecycler.ModalClass;
 import com.example.fitnessapp.FragmentRecycler.NewAdapter;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.RecyclerView.Adapter;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,8 +48,11 @@ public class ExercisesFragment extends Fragment {
         mList= new ArrayList<>();
         mList.add(new ModalClass(R.drawable.bench,"Bench press description"));
         mList.add(new ModalClass(R.drawable.ohp,"OHP description"));
-
-
+        mList.add(new ModalClass(R.drawable.deadlift,"Deadlift description"));
+        mList.add(new ModalClass(R.drawable.squat,"Squat description"));
+        mList.add(new ModalClass(R.drawable.lateral,"Lateral raises description"));
+        mList.add(new ModalClass(R.drawable.ohp_dumbbells,"OHP with dumbbells description"));
+        mList.add(new ModalClass(R.drawable.preacher,"Preacher curls description"));
     }
 
 

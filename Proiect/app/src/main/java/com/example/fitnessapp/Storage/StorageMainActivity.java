@@ -69,12 +69,15 @@ public class StorageMainActivity extends AppCompatActivity {
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
+        //select image
         mButtonChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFileChooser();
             }
         });
+
+        //upload the image to firebase
         mButtonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,12 +97,17 @@ public class StorageMainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //function that handles the picking of an image
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
+        //select the image
         intent.setAction(Intent.ACTION_GET_CONTENT);
+        //make sure its an image
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
+    //we load the image after we select it
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -107,21 +115,26 @@ public class StorageMainActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
+            //we load the imagein the imageview
             Picasso.with(this).load(mImageUri).into(mImageView);
         }
     }
 
+    //returns extension of file ex img, png
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
+    //function that handles the upload to the firebase
     private void uploadFile() {
         if (mImageUri != null) {
+            //creates the image name as time in miliseconds in the storage
             final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
 
+            //we add the image in storage
             fileReference.putFile(mImageUri).continueWithTask(
                     new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
                         @Override

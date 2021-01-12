@@ -12,10 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fitnessapp.Fragment.FragmentMainActivity;
-import com.example.fitnessapp.FragmentRecycler.FragmentRecyclerMainActivity;
 import com.example.fitnessapp.MainMenu.MenuMainActivity;
-import com.example.fitnessapp.Storage.StorageMainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail, editTextPassword;
     private Button signIn;
 
-    private String name;
+    private String name,gender,height,weight;
 
     private FirebaseAuth mAuth;
 
@@ -73,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(userProfile!=null)
                 {
                     name=userProfile.fullName;
+                    gender=userProfile.gender;
+                    height=userProfile.height;
+                    weight=userProfile.weight;
                 }
             }
 
@@ -147,6 +147,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                   //  startActivity(new Intent(MainActivity.this, MenuMainActivity.class));
                     Intent intentt = new Intent(new Intent(MainActivity.this, MenuMainActivity.class));
                     intentt.putExtra("name",name);
+                    //new
+                    intentt.putExtra("gender",gender);
+                    intentt.putExtra("height",height);
+                    intentt.putExtra("weight",weight);
                     startActivity(intentt);
                 }
                 else

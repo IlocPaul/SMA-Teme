@@ -9,30 +9,37 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.fitnessapp.FragmentRecycler.FragmentRecyclerMainActivity;
-import com.example.fitnessapp.MainActivity;
-import com.example.fitnessapp.MainMenu.Adapter.RecyclerViewAdapter;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.RecyclerView.RecyclerViewMainActivity;
 import com.example.fitnessapp.Storage.StorageMainActivity;
 
 public class MenuMainActivity extends AppCompatActivity {
 
 
     Button btnExercises, btnSetting, btnCalendar;
-    TextView nameTextBox;
+    TextView nameTextBox,genderTextBox, heightTextBox,weightTextBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_main);
 
         btnExercises = (Button) findViewById(R.id.btnExercises);
-        btnSetting = (Button) findViewById(R.id.btnSetting);
-        btnCalendar = (Button) findViewById(R.id.btnCalendar);
+        btnSetting = (Button) findViewById(R.id.btnFragment);
+        btnCalendar = (Button) findViewById(R.id.btnFood);
         nameTextBox=(TextView) findViewById(R.id.nameUser);
+        genderTextBox=(TextView) findViewById(R.id.gender);
+        heightTextBox=(TextView) findViewById(R.id.height);
+        weightTextBox=(TextView) findViewById(R.id.weight);
+
 
         String username = getIntent().getStringExtra("name");
+        String gender= getIntent().getStringExtra("gender");
+        String height= getIntent().getStringExtra("height");
+        String weight= getIntent().getStringExtra("weight");
 
         nameTextBox.setText(username);
+        genderTextBox.setText(gender);
+        heightTextBox.setText(height);
+        weightTextBox.setText(weight);
 
         btnExercises.setOnClickListener(new View.OnClickListener() {
             @Override

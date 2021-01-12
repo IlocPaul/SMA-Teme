@@ -23,17 +23,22 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private List<Upload> mUploads;
     private OnItemClickListener mListener;
 
-public ImageAdapter(Context context, List<Upload> uploads) {
+    //we take the images passed from a function call ex storage
+    public ImageAdapter(Context context, List<Upload> uploads) {
         mContext = context;
         mUploads = uploads;
         }
-@Override
-public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        //we load the adapter with the view/layout
+    @Override
+    public ImageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.image_item, parent, false);
         return new ImageViewHolder(v);
         }
-@Override
-public void onBindViewHolder(ImageViewHolder holder, int position) {
+
+        //
+    @Override
+    public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
         Picasso.with(mContext)
@@ -42,11 +47,12 @@ public void onBindViewHolder(ImageViewHolder holder, int position) {
         .centerCrop()
         .into(holder.imageView);
         }
-@Override
-public int getItemCount() {
+
+    @Override
+    public int getItemCount() {
         return mUploads.size();
         }
-public class ImageViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener, View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
+    public class ImageViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener, View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
 
     public TextView textViewName;
     public ImageView imageView;
@@ -54,6 +60,7 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  implements View.On
     public ImageViewHolder(View itemView) {
         super(itemView);
 
+        //i place the text and image in my varbiales
         textViewName = itemView.findViewById(R.id.text_view_name);
         imageView = itemView.findViewById(R.id.image_view_upload);
 
@@ -71,6 +78,7 @@ public class ImageViewHolder extends RecyclerView.ViewHolder  implements View.On
         }
     }
 
+    //floating context
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         menu.setHeaderTitle("Select Action");

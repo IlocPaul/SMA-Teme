@@ -39,6 +39,12 @@ public class ListExercises extends AppCompatActivity {
 
         exercisesList.add(new Exercise(R.drawable.bench,"Bench press"));
         exercisesList.add(new Exercise(R.drawable.ohp,"Overhead press"));
+        exercisesList.add(new Exercise(R.drawable.deadlift,"Deadlift"));
+        exercisesList.add(new Exercise(R.drawable.squat,"Squat"));
+        exercisesList.add(new Exercise(R.drawable.preacher,"Preacher curls"));
+        exercisesList.add(new Exercise(R.drawable.lateral,"Lateral Raises"));
+        exercisesList.add(new Exercise(R.drawable.ohp_dumbbells,"Ohp with dumbbells"));
+
 
     }
 }

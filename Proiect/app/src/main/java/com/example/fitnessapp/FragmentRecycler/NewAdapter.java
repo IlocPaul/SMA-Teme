@@ -38,6 +38,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.ViewHolder> {
     }
 
     //holds item from recycler
+    //used to update the contents of the itemView to reflect the item at the given position.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.imageView.setImageResource(mList.get(position).getImage());
